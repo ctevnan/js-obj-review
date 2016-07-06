@@ -1,6 +1,7 @@
 $(document).ready(function() {
   for(var i = 0; i < window.users.length; i++) {
-    $(".row").append(buildThumbnails(window.users[i]));
+    var newCol = buildThumbnails(window.users[i]);
+    $(".row").append(newCol);
   }
 
   function buildThumbnails(userData) {
@@ -11,8 +12,9 @@ $(document).ready(function() {
     var userH3 = $("<h3>").append(userData.name);
     var userP = $("<p>");
     var userEmail = $("<a>").attr("href", "mailto:" + userData.email).append(userData.email);
-
-    userP.append(userEmail);
+    var userGeo = $("<div>").append(userData.address.geo.lat + ", " + userData.address.geo.lng);
+    
+    userP.append(userEmail).append(userGeo);  //append to dom
 
     thumbnailDiv
       .append(userImg)
