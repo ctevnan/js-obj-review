@@ -1,3 +1,5 @@
 $(document).ready(function() {
-  console.log(window.users);
+  for(var i = 0; i < window.users.length; i++) {
+    console.log(window.users[i]);
+  }
 });
