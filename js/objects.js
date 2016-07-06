@@ -6,7 +6,7 @@ $(document).ready(function() {
   function buildThumbnails(userData) {
     var colDiv = $("<div>").addClass("col-md-3");
     var thumbnailDiv = $("<div>").addClass("thumbnail");
-    var userImg = $("<img>").attr("src", "http://lorempicsum.com/futurama/255/200/2");
+    var userImg = $("<img>").attr("src", "http://lorempicsum.com/futurama/255/200/" + userData.id);
     var captionDiv = $("<div>").addClass("caption");
     var userH3 = $("<h3>").append(userData.name);
 
